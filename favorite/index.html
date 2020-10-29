@@ -29,10 +29,6 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
   
-    
-<script src="/js/qrious.js"></script>
-
-  
   
   
     
@@ -193,11 +189,6 @@
     <!-- 打赏 END -->
     <!-- 二维码 START -->
     
-      <div class="qrcode">
-        <canvas id="share-qrcode"></canvas>
-        <p class="notice">扫描二维码，分享此文章</p>
-      </div>
-    
     <!-- 二维码 END -->
     
       <!-- Gitalk START -->
@@ -271,13 +262,6 @@
 </script>
 
 
-  <script>
-    var qr = new QRious({
-      element: document.getElementById('share-qrcode'),
-      value: document.location.href
-    });
-  </script>
-
 
 
 
@@ -302,21 +286,10 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy;2020 <a target="_blank" rel="noopener" href="https://github.com/chensem">sem chen</a>
-    | PV: <span id="busuanzi_value_site_pv"></span>
-    | UV: <span id="busuanzi_value_site_uv"></span>
-    | PPV: <span id="busuanzi_value_page_pv"></span>
+    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
+    Theme by <a target="_blank" rel="noopener" href="https://github.com/chensem">chensem</a>
   </p>
-  <div style="width:350px;margin:0 auto; padding:0px 0; overflow: hidden;">
-    <a target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn/" style="display:inline-block;text-decoration: none; height:20px;line-height:20px;float: left;">
-        <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;"></p >
-    </a >
-    <a target="_blank" rel="noopener" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" style="display:inline-block; text-decoration: none; height:20px; line-height:20px; float:right;">
-        <img src="http://cdn.zmoyi.com/static/images/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87.png" style="float:left;" alt="">
-        <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">浙公网安备 号</p >
-    </a >
-  </div>
 </footer>
 
 <script>
@@ -330,14 +303,14 @@
   }
 </script>
 <script>
-  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
     FastClick.attach(document.body);
   })
 </script>
 
 <script>
   var hasLine = 'true';
-  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
     $('figure pre').each(function(i, block) {
       var figure = $(this).parents('figure');
       if (hasLine === 'false') {
@@ -356,7 +329,6 @@
 </script>
 <!-- Baidu Tongji -->
 
-<!-- busuanzi -->
 
 <script src="/js/script.js"></script>
 
