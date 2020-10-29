@@ -3,10 +3,10 @@
   <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="chensem&#39;s blog">
-  <meta name="keyword" content="hexo-theme, vuejs">
+  <meta name="description" content="Chensem&#39;s blog">
+  <meta name="keyword" content="">
   
-    <link rel="shortcut icon" href="/css/images/logo.png">
+    <link rel="shortcut icon" href="http://cdn.zmoyi.com/static/images/logo.png">
   
   <title>
     
@@ -20,17 +20,23 @@
 <link rel="stylesheet" href="/css/style.css">
 
   
+  
     
-<link rel="stylesheet" href="/css/plugins/gitment.css">
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
   
+    
+<script src="/js/qrious.js"></script>
+
+  
+  
   
     
-<script src="/js/gitment.js"></script>
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
   
   
@@ -62,7 +68,7 @@
   
 <meta name="generator" content="Hexo 5.2.0"></head>
 <div class="wechat-share">
-  <img src="/css/images/logo.png" />
+  <img src="http://cdn.zmoyi.com/static/images/logo.png" />
 </div>
 
   <body>
@@ -187,15 +193,29 @@
     <!-- 打赏 END -->
     <!-- 二维码 START -->
     
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
     <!-- 二维码 END -->
     
-      <!-- Gitment START -->
-      <div id="comments"></div>
-      <!-- Gitment END -->
+      <!-- Gitalk START -->
+      <div id="gitalk-container"></div>
+      <!-- Gitalk END -->
     
   </article>
   <!-- Article END -->
   <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">目录</strong>
+    
+      <ol class="nav">none</ol>
+    
+  </div>
+</aside>
   
   <!-- Catalog END -->
 </main>
@@ -251,34 +271,27 @@
 </script>
 
 
-
-
   <script>
-    var gitmentConfig = "chensem";
-    if (gitmentConfig !== 'undefined') {
-      var gitment = new Gitment({
-        id: "favorite",
-        owner: "chensem",
-        repo: "chensem.github.io",
-        oauth: {
-          client_id: "fad2844a4c0240d38d36",
-          client_secret: "28c4a6ce7b63de78b0447fb640813225fab09d83"
-        },
-        theme: {
-          render(state, instance) {
-            const container = document.createElement('div')
-            container.lang = "en-US"
-            container.className = 'gitment-container gitment-root-container'
-            container.appendChild(instance.renderHeader(state, instance))
-            container.appendChild(instance.renderEditor(state, instance))
-            container.appendChild(instance.renderComments(state, instance))
-            container.appendChild(instance.renderFooter(state, instance))
-            return container;
-          }
-        }
-      })
-      gitment.render(document.getElementById('comments'))
-    }
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+  </script>
+
+
+
+
+
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'fad2844a4c0240d38d36',
+      clientSecret: '28c4a6ce7b63de78b0447fb640813225fab09d83',
+      id: window.location.pathname,
+      repo: 'chensem.github.io',
+      owner: 'chensem',
+      admin: 'chensem'
+    })
+    gitalk.render('gitalk-container')
   </script>
 
 
@@ -289,10 +302,21 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    &copy;2020 <a target="_blank" rel="noopener" href="https://github.com/chensem">sem chen</a>
+    | PV: <span id="busuanzi_value_site_pv"></span>
+    | UV: <span id="busuanzi_value_site_uv"></span>
+    | PPV: <span id="busuanzi_value_page_pv"></span>
     <br>
-    Theme by <a target="_blank" rel="noopener" href="https://github.com/chensem">chensem</a>
   </p>
+  <div style="width:350px;margin:0 auto; padding:0px 0; overflow: hidden;">
+    <a target="_blank" rel="noopener" href="http://www.beian.miit.gov.cn/" style="display:inline-block;text-decoration: none; height:20px;line-height:20px;float: left;">
+        <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;"></p >
+    </a >
+    <a target="_blank" rel="noopener" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" style="display:inline-block; text-decoration: none; height:20px; line-height:20px; float:right;">
+        <img src="http://cdn.zmoyi.com/static/images/%E5%A4%87%E6%A1%88%E5%9B%BE%E6%A0%87.png" style="float:left;" alt="">
+        <p style="float:left;height:20px;line-height:20px;margin: 0px 0px 0px 5px; color:#939393;">浙公网安备 号</p >
+    </a >
+  </div>
 </footer>
 
 <script>
@@ -332,6 +356,7 @@
 </script>
 <!-- Baidu Tongji -->
 
+<!-- busuanzi -->
 
 <script src="/js/script.js"></script>
 
