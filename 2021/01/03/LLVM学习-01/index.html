@@ -10,7 +10,7 @@
   
   <title>
     
-      
+      LLVM学习-01 | Chensem&#39;s Blog
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -151,8 +151,8 @@
 </header>
 
     <div id="article-banner">
-  <h2></h2>
-  <p class="post-date">2020-12-25</p>
+  <h2>LLVM学习-01</h2>
+  <p class="post-date">2021-01-03</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -160,49 +160,7 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h3 id="IOS逆向基础知识"><a href="#IOS逆向基础知识" class="headerlink" title="IOS逆向基础知识"></a>IOS逆向基础知识</h3><h4 id="0x00-前置条件"><a href="#0x00-前置条件" class="headerlink" title="0x00 前置条件"></a>0x00 前置条件</h4><ul>
-<li>一台MBP</li>
-<li>一台可越狱的IPhone</li>
-</ul>
-<h4 id="0x01-基础工具"><a href="#0x01-基础工具" class="headerlink" title="0x01 基础工具"></a>0x01 基础工具</h4><p>越狱工具</p>
-<ul>
-<li><p>checkra1n </p>
-</li>
-<li><p>unc0ver 搭配爱思助手使用，一键越狱</p>
-</li>
-</ul>
-<p>砸壳</p>
-<ul>
-<li><p>frida-ios-dump 比较不错的砸壳工具</p>
-</li>
-<li><p>dumpdecrypted、clutch 高版本IOS版本有各种问题</p>
-</li>
-<li><p>crackerXI+ 是一款Cydia插件，非常不错比较推荐</p>
-</li>
-</ul>
-<p>调试辅助工具</p>
-<ul>
-<li><p>frida</p>
-</li>
-<li><p>cycript</p>
-</li>
-<li><p>Reveal2Loader 建议使用，RevealLoader老版本，IOS12版本以上使用Reveal2Loader比较方便</p>
-<blockquote>
-<p>IOS 12.0.1遇到的坑，安装RevealLoader无效，需安装Reveal2Loader，提示版本问题，拷贝Mac上的RevealServer到/Library/MobileSubstrate/DynamicLibraries/reveal2Loader.dylib，然后软重启killall SpringBoard，网上很多教程可能有点老了。详细参考此文章<a target="_blank" rel="noopener" href="https://xiaozhuanlan.com/topic/5820613794">https://xiaozhuanlan.com/topic/5820613794</a></p>
-</blockquote>
-</li>
-</ul>
-<p>一些常见的知识</p>
-<h5 id="0x01-砸壳遇到各种各样的问题，但是想要获取解密的IPA？"><a href="#0x01-砸壳遇到各种各样的问题，但是想要获取解密的IPA？" class="headerlink" title="0x01 砸壳遇到各种各样的问题，但是想要获取解密的IPA？"></a>0x01 砸壳遇到各种各样的问题，但是想要获取解密的IPA？</h5><blockquote>
-<p>可以到爱思助手上的应用市场直接下载IPA，还有其他的如PP助手，里面下载的都是IPA工具</p>
-</blockquote>
-<h5 id="0x02-如何安装一个IPA文件"><a href="#0x02-如何安装一个IPA文件" class="headerlink" title="0x02 如何安装一个IPA文件"></a>0x02 如何安装一个IPA文件</h5><blockquote>
-<p>推荐使用爱思助手，直接进行安装。</p>
-</blockquote>
-<h5 id="0x03-Cydia访问太慢？"><a href="#0x03-Cydia访问太慢？" class="headerlink" title="0x03 Cydia访问太慢？"></a>0x03 Cydia访问太慢？</h5><blockquote>
-<p>使用爱思助手下载乐网APP便可。</p>
-</blockquote>
-</section>
+    <section class="markdown-content"><h4 id="0x01-环境搭建"><a href="#0x01-环境搭建" class="headerlink" title="0x01 环境搭建"></a>0x01 环境搭建</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;llvm&#x2F;llvm-project.git</span><br><span class="line">cd llvm-project</span><br><span class="line">mkdir build</span><br><span class="line">cd build</span><br><span class="line">cmake -G ninja ..&#x2F;llvm</span><br></pre></td></tr></table></figure></section>
     <!-- Tags START -->
     
     <!-- Tags END -->
@@ -211,13 +169,20 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2020/10/27/%E9%9A%8F%E7%AC%94/">
+      <a class="nav-left" href="/2020/12/14/IOS%E9%80%86%E5%90%91%E6%80%BB%E7%BB%93/">
         <span class="nav-arrow">← </span>
         
-          随笔
+          IOS逆向总结
         
       </a>
     
+    
+      <a class="nav-right" href="/2021/03/02/%E6%9D%82%E8%B0%88/">
+        
+          杂谈
+        
+        <span class="nav-arrow"> →</span>
+      </a>
     
   </div>
 
@@ -258,7 +223,7 @@
   <div class="toc-main">
     <strong class="toc-title">目录</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#IOS%E9%80%86%E5%90%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-nav-text">IOS逆向基础知识</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#0x00-%E5%89%8D%E7%BD%AE%E6%9D%A1%E4%BB%B6"><span class="toc-nav-text">0x00 前置条件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#0x01-%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7"><span class="toc-nav-text">0x01 基础工具</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#0x01-%E7%A0%B8%E5%A3%B3%E9%81%87%E5%88%B0%E5%90%84%E7%A7%8D%E5%90%84%E6%A0%B7%E7%9A%84%E9%97%AE%E9%A2%98%EF%BC%8C%E4%BD%86%E6%98%AF%E6%83%B3%E8%A6%81%E8%8E%B7%E5%8F%96%E8%A7%A3%E5%AF%86%E7%9A%84IPA%EF%BC%9F"><span class="toc-nav-text">0x01 砸壳遇到各种各样的问题，但是想要获取解密的IPA？</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#0x02-%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85%E4%B8%80%E4%B8%AAIPA%E6%96%87%E4%BB%B6"><span class="toc-nav-text">0x02 如何安装一个IPA文件</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#0x03-Cydia%E8%AE%BF%E9%97%AE%E5%A4%AA%E6%85%A2%EF%BC%9F"><span class="toc-nav-text">0x03 Cydia访问太慢？</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#0x01-%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="toc-nav-text">0x01 环境搭建</span></a></li></ol>
     
   </div>
 </aside>
@@ -268,7 +233,7 @@
 
 <script>
   (function () {
-    var url = 'http://example.com/2020/12/25/IOS逆向总结/';
+    var url = 'http://example.com/2021/01/03/LLVM学习-01/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -341,7 +306,7 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2020 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    &copy; 2021 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
     Theme by <a target="_blank" rel="noopener" href="https://github.com/chensem">chensem</a>
   </p>
